@@ -24,15 +24,14 @@ CONFIG = {
     #"csv_file": '/content/drive/MyDrive/backtest_data/deb_basket.csv',
     #"csv_file": '/content/drive/MyDrive/backtest_data/ban_strategy_backtest_jan_2024.csv',
     #"csv_file": '/content/drive/MyDrive/backtest_data/ban_strategy_backtest_jan_2024_v2.csv',
-    "csv_file": '/content/drive/MyDrive/backtest_data/ban_stock_v3.csv',
-    "output_folder": '/content/drive/My Drive/output'
+    "csv_file": 'sample_data.csv',
+    "output_folder": './output'
 }
 
 
 def read_csv_data(csv_file):
-    from google.colab import drive
-    drive.mount('/content/drive')
-
+    # Removed Google Colab drive mount for local environment
+    
     def parse_date(x):
         try:
             return pd.to_datetime(x).normalize()
